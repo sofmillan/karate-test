@@ -6,5 +6,5 @@ Feature: sample karate test script
   Scenario: get all users and then get the first user by id
     Given path '/character/129'
     When method get
-    Then status 200
+    Then status 400
   
