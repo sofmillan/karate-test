@@ -30,14 +30,14 @@ jobs:
           restore-keys: maven-${{ runner.os }}-
 
       - name: Run Karate Tests
-        run: mvn test -Dtest=DemoTestRunner
+        run: mvn test -Dtest=UsersRunner
 
       - name: Generate Cucumber Reports
         run: mvn verify
 
       - name: Upload Karate Cucumber Reports
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cucumber-reports
           path: target/karate-reports
